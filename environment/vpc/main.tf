@@ -3,7 +3,7 @@ resource "aws_vpc" "this" {
   enable_dns_hostnames = true
 
   tags {
-    Name = "${var.project_name}-vpc"
+    Name = "${var.name}-vpc"
   }
 }
 
@@ -13,7 +13,7 @@ resource "aws_subnet" "this_public" {
   map_public_ip_on_launch = "true"
   availability_zone = "${var.aws_region}a"
   tags {
-    Name = "${var.project_name}-public-subnet"
+    Name = "${var.name}-public-subnet"
   }
 }
 
@@ -23,14 +23,14 @@ resource "aws_subnet" "this_private" {
   map_public_ip_on_launch = "false"
   availability_zone = "${var.aws_region}a"
   tags {
-    Name = "${var.project_name}-private-subnet"
+    Name = "${var.name}-private-subnet"
   }
 }
 
 resource "aws_internet_gateway" "this_gateway" {
   vpc_id = "${aws_vpc.this.id}"
   tags {
-    Name = "${var.project_name}-internet-gateway"
+    Name = "${var.name}-internet-gateway"
   }
 }
 
@@ -41,7 +41,7 @@ resource "aws_route_table" "this_route_table" {
     gateway_id = "${aws_internet_gateway.this_gateway.id}"
   }
   tags {
-    Name = "${var.project_name}-route-table"
+    Name = "${var.name}-route-table"
   }
 }
 

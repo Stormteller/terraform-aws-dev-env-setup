@@ -1,0 +1,35 @@
+# General
+project_name = "MyAwesomeProject14"
+
+
+# AWS
+aws_region = "us-east-1"
+aws_access_key = "<access_key>"
+aws_secret_key = "<secret_key>"
+
+# Route53
+route53_domain_name = "uptech.team."  # Don't forget dot in the end 
+
+
+# Instance
+dev_instance_ssh_key_path = "~/.ssh/awesome_project_dev.pem.pub"
+staging_instance_ssh_key_path = "~/.ssh/awesome_project_dev.pem.pub
+
+dev_instance_volume_size = 20
+staging_instance_volume_size = 20
+
+# More: https://aws.amazon.com/ru/amazon-linux-ami/ https://cloud-images.ubuntu.com/locator/ec2/
+instance_ami = "ami-0922553b7b0369273" 
+
+dev_instance_type = "t2.micro"
+staging_instance_type = "t2.micro"
+
+
+# VPC
+vpc_cidr = "10.0.0.0/26" # More about CIDR: https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing 
+vpc_subnets_cidrs = { public = "10.0.0.0/27", private = "10.0.0.32/27" }
+
+
+# Security group
+
+public_ports = [22, 80, 443, 8080] # Port to be open publically

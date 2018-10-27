@@ -1,7 +1,3 @@
-# https://github.com/hashicorp/terraform/issues/13022#issuecomment-294262392  
-# Command: `terraform init -backend-config="bucket=testim-okr-terraform-state-bucket" -backend-config="region=us-east-1"`
-
-
 terraform {
   backend "s3" {
     key = "dev/state.tfstate"
@@ -76,14 +72,14 @@ module "staging_instance" {
 # Route53
 module "dev_subdomain" {
   source = "route53"
-  zone_id = "${var.route53_zone_id}"
+  domain_name = "${var.route53_domain_name}"
   subdomain = "dev.${var.project_name}"
   ip = "${module.dev_instance.instance_ip}"
 }
 
 module "staging_subdomain" {
   source = "route53"
-  zone_id = "${var.route53_zone_id}"
+  domain_name = "${var.route53_domain_name}"
   subdomain = "staging.${var.project_name}"
   ip = "${module.staging_instance.instance_ip}"
 }

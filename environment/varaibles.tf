@@ -27,7 +27,7 @@ variable "vpc_subnets_cidrs" {
   }
 }
 
-variable "route53_zone_id" {
+variable "route53_domain_name" {
   type = "string"
 }
  

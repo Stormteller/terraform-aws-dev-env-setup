@@ -1,5 +1,5 @@
 data "aws_route53_zone" "this_zone" {
-  zone_id = "${var.zone_id}"
+  name = "${var.domain_name}"
 }
 
 resource "aws_route53_record" "this_record" {

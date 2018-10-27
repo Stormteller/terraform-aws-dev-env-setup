@@ -6,7 +6,16 @@ This is terraform scripts skeleton to initialize most basic project development 
 
 Clone the repo and copy it to your project infrastructure folder, feel free to modify and add any resources you need. This project creates only most commonly used and basic resources for the fast development start.
 
+```
+git clone git@github.com:uptechteam/project-cloud-env-setup-terraform-template.git
+```
+
 If you are not familar with terraform - check out documentation: https://www.terraform.io/docs/index.html  
+
+Usage workflow:
+
+ - create S3 bucket for terraform state backend with `cloud-init`
+
 
 ### Structure
 

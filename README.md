@@ -1,6 +1,6 @@
 # Terraform Environment Initnalization Template
 
-This is terraform scripts skeleton to initialize most basic project development environment in the cloud. Currently only AWS suported.
+This is terraform scripts skeleton to initialize basic project development environment in the cloud. Currently only AWS supported.
 
 ### General usage
 
